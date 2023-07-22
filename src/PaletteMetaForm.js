@@ -13,13 +13,13 @@ export default function PaletteMetaForm(props) {
   const [stage, setStage] = useState("form");
   const [newPaletteName, setNewPaletteName] = useState("");
 
-  useEffect = () => {
+  useEffect(() => {
     ValidatorForm.addValidationRule("isPaletteNameUnique", (value) =>
       props.palettes.every(
         ({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
       )
     );
-  };
+  });
 
   const handleChange = (evt) => {
     setNewPaletteName(evt.target.value);
